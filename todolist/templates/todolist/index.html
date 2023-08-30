@@ -1,0 +1,20 @@
+{% extends "layout/basic.html" %}
+
+
+{% load static %}
+{% load bootstrap4 %}
+
+{% block title %}{{ rubric }}{% endblock %}
+
+{% block content %}
+<h2 style="text-align: center;">Задачи на сегодня</h2>
+{% if tsks %}
+{% for tsk in tsks %}
+<a style="text-align: center; cursor: pointer;">
+    <h5 style="cursor: pointer"><input type="checkbox" name="task" style="cursor: pointer">
+        <label for="task" style="cursor: pointer">{{ tsk.title }}</label></h5>
+    </a>
+{% endfor %}
+{% endif %}
+
+{% endblock %}
